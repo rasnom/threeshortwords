@@ -9,6 +9,8 @@ class ThesaurusService
   end
 
   def synonym(word)
+    return [] if word == '' 
+
     url = 'http://words.bighugelabs.com/api/2/'
     url += @api_key + '/'
     url += word + '/json'

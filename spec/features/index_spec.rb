@@ -22,16 +22,16 @@ RSpec.feature "Index", type: :feature do
     describe 'searching for the synonym intersection of two words' do
       before(:each) do
         fill_in('first_word', :with => 'azure')
-        fill_in('second_word', :with => 'sad')
+        fill_in('second_word', :with => 'risque')
         click_button('Submit')
       end
 
       it 'displays the searched words on the results page' do
         expect(find_field('first_word').value).to eq 'azure'
-	expect(find_field('second_word').value).to eq 'sad'
+	expect(find_field('second_word').value).to eq 'risque'
       end
 
-      xit 'displays words that match both criteria in the results' do
+      it 'displays words that match both criteria in the results' do
         expect(page).to have_content('blue')
       end
     end

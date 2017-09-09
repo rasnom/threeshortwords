@@ -12,12 +12,17 @@ RSpec.describe 'ThesaurusService' do
   end
 
   describe 'synonym' do
-    it 'returns a list of words' do
-      allow(thesaurus).to receive(:synonym).and_return(['a', 'small', 'list'])
+    it 'returns a list of synonyms' do
+      allow(HTTParty).to receive(:get).and_return('{"noun":{"syn":["this","and","that"]}}')
 
       result = thesaurus.synonym('anything')
       expect(result).to be_a(Array)
       expect(result.first).to be_a(String)
+    end
+
+    it 'returns an empty array if no word is specified' do
+      result = thesaurus.synonym('')
+      expect(result).to eq [] 
     end
   end
 
