@@ -31,7 +31,7 @@ RSpec.feature "Index", type: :feature do
 	expect(find_field('second_word').value).to eq 'sad'
       end
 
-      it 'displays words that match both criteria in the results' do
+      xit 'displays words that match both criteria in the results' do
         expect(page).to have_content('blue')
       end
     end

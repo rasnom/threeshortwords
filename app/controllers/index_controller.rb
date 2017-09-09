@@ -4,7 +4,18 @@ class IndexController < ApplicationController
     @first_word = params[:first_word]
     @second_word = params[:second_word]
     thesaurus = ThesaurusService.new
-    @results = [thesaurus.name]
+    if @first_word != nil
+      first_synonyms = thesaurus.synonym(@first_word)
+    else
+      first_synonyms = []
+    end
+    if @second_word != nil
+      second_synonyms = thesaurus.synonym(@second_word)
+    else
+      second_synonyms = []
+    end
+    @results = second_synonyms
+
   end
 
 end
