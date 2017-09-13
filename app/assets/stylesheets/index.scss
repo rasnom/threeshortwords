@@ -7,15 +7,10 @@ div {
   border: 1px solid red;
 }
 
-h1 {
-}
-
 .upper-form {
-  background-color: orange;
 }
 
 .lower-form {
-  background-color: yellow;
 }
 
 
@@ -28,9 +23,14 @@ $block: 160px;
 
 div.page {
   padding: $medium;
-  max-width: 800px;
+  max-width: 4 * $block;
+  min-width: 2 * $block;
   margin-left: auto;
   margin-right: auto;
+}
+
+h1 {
+  padding-left: $small;
 }
 
 .upper-form {
@@ -47,7 +47,15 @@ div.page {
   top: $small;
   bottom: 0;
   padding: $small;
-  opacity: 0.4;
+  padding-top: $medium;
+}
+
+.negative-space {
+  position: absolute;
+  background-color: white;
+  top: $xl;
+  bottom: 0; 
+  width: calc(25% - #{$small});
 }
 
 .left-word {
@@ -56,8 +64,14 @@ div.page {
   left: $small;
   right: 20%;
   background-color: blue;
+  border-radius: 0 $xl 0 0;
   input {
     float: left;
+    width: $block;
+  }
+  .negative-space {
+    left: 0;
+    border-radius: 0 $large 0 0;
   }
 }
 
@@ -68,8 +82,14 @@ div.page {
   left: 20%;
   top: $xl;
   background-color: green;
+  border-radius: $xl 0 0 0;
   input {
     float: right;
+    width: $block;
+  }
+  .negative-space {
+    right: 0;
+    border-radius: $large 0 0 0;
   }
 }
 
@@ -83,8 +103,10 @@ div.page {
   right: calc(20% - #{$small});
   text-align: center;
   input {
-    margin-top: $small;
+    margin-top: $medium;
+    width: $block;
   }
+  border-radius: $small;
 }
 
 .submit-wrapper {
