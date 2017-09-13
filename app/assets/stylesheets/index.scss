@@ -24,10 +24,13 @@ $small: 10px;
 $medium: 20px;
 $large: 40px;
 $xl: 80px;
-$block: 200px;
+$block: 160px;
 
 div.page {
   padding: $medium;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .upper-form {
@@ -36,7 +39,6 @@ div.page {
 }
 
 .lower-form {
-  height: $block;
   position: relative;
 }
 
@@ -60,11 +62,11 @@ div.page {
 }
 
 .right-word {
-  height: $block;
+  height: $block - $large;
   z-index: 2;
   right: $small;
   left: 20%;
-  top: $large;
+  top: $xl;
   background-color: green;
   input {
     float: right;
@@ -72,10 +74,32 @@ div.page {
 }
 
 .filter-input {
+  height: $xl;
   z-index: 3;
   background-color: gray;
   position: absolute;
   top: -$small;
-  left: 18%;
-  right: 22%;
+  left: calc(20% - #{$small});
+  right: calc(20% - #{$small});
+  text-align: center;
+  input {
+    margin-top: $small;
+  }
+}
+
+.submit-wrapper {
+  position: absolute;
+  top: $xl - $small;
+  left: 0;
+  right: 0;
+  text-align: center;  
+}
+
+.results-container {
+  position: relative;
+  top: $xl;
+  ul {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
 }
