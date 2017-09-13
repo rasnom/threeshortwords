@@ -1,3 +1,131 @@
 // Place all the styles related to the Index controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// debugging styles 
+div {
+}
+
+.upper-form {
+}
+
+.lower-form {
+}
+
+
+// actual styles
+$small: 10px;
+$medium: 20px;
+$large: 40px;
+$xl: 80px;
+$block: 160px;
+
+div.page {
+  max-width: 4 * $block;
+  min-width: 2 * $block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 {
+  padding-left: $small;
+}
+
+.upper-form {
+  height: $block + 2*$small + $large;
+  position: relative;
+}
+
+.lower-form {
+  position: relative;
+}
+
+.word-input {
+  position: absolute;
+  top: $small;
+  bottom: 0;
+  padding: $small;
+  padding-top: $medium;
+}
+
+.negative-space {
+  position: absolute;
+  background-color: white;
+  top: $xl;
+  bottom: 0; 
+  width: calc(25% - #{$small});
+}
+
+.left-word {
+  height: $block + $large - $small;
+  z-index: 1;
+  left: $small;
+  right: 20%;
+  background-color: blue;
+  border-radius: 0 $xl 0 0;
+  input {
+    float: left;
+    width: $block;
+  }
+  .negative-space {
+    left: 0;
+    border-radius: 0 $large 0 0;
+  }
+}
+
+.right-word {
+  height: $block - $large;
+  z-index: 2;
+  right: $small;
+  left: 20%;
+  top: $xl;
+  background-color: green;
+  border-radius: $xl 0 0 0;
+  input {
+    float: right;
+    width: $block;
+  }
+  .negative-space {
+    right: 0;
+    border-radius: $large 0 0 0;
+  }
+}
+
+.filter-input {
+  height: $xl + $medium;
+  z-index: 3;
+  background-color: gray;
+  position: absolute;
+  top: -$small;
+  left: calc(20% - #{$small});
+  right: calc(20% - #{$small});
+  text-align: center;
+  input {
+    margin-top: $medium;
+    width: $block;
+  }
+  border-radius: $small;
+}
+
+.submit-wrapper {
+  position: absolute;
+  z-index: 4;
+  left: 0;
+  right: 0;
+  text-align: center;  
+}
+
+.results-container {
+  position: relative;
+  margin-top: $xl;
+  margin-right: 20%;
+  margin-left: 20%;
+  background-color: orange;
+  ul {
+    padding-top: $large;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-bottom: $large;
+    list-style-type: none;
+  }
+}
