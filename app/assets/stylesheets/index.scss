@@ -4,7 +4,6 @@
 
 // debugging styles 
 div {
-  border: 1px solid red;
 }
 
 .upper-form {
@@ -22,7 +21,6 @@ $xl: 80px;
 $block: 160px;
 
 div.page {
-  padding: $medium;
   max-width: 4 * $block;
   min-width: 2 * $block;
   margin-left: auto;
@@ -94,7 +92,7 @@ h1 {
 }
 
 .filter-input {
-  height: $xl;
+  height: $xl + $medium;
   z-index: 3;
   background-color: gray;
   position: absolute;
@@ -111,7 +109,7 @@ h1 {
 
 .submit-wrapper {
   position: absolute;
-  top: $xl - $small;
+  z-index: 4;
   left: 0;
   right: 0;
   text-align: center;  
@@ -119,9 +117,15 @@ h1 {
 
 .results-container {
   position: relative;
-  top: $xl;
+  margin-top: $xl;
+  margin-right: 20%;
+  margin-left: 20%;
+  background-color: orange;
   ul {
+    padding-top: $large;
     margin-left: 20%;
     margin-right: 20%;
+    padding-bottom: $large;
+    list-style-type: none;
   }
 }
