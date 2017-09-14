@@ -29,7 +29,7 @@ class WordsAPI < ThesaurusService
     word_list.uniq
   end
 
-  def synonym(word)
+  def synonyms(word)
     return [] if word == '' 
     
     response = HTTParty.get(url(word))

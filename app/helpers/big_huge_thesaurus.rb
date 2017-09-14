@@ -7,7 +7,7 @@ class BigHugeThesaurus < ThesaurusService
     @api_key = ENV['BIG_HUGE_THESAURUS_API_KEY']
   end
 
-  def synonym(word)
+  def synonyms(word)
     return [] if word == '' 
 
     url = 'http://words.bighugelabs.com/api/2/'

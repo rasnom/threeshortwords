@@ -39,16 +39,16 @@ RSpec.describe 'WordsAPI' do
     end
   end
 
-  describe 'synonym' do
+  describe 'synonyms' do
     it 'returns a list of synonyms' do
       allow(HTTParty).to receive(:get).and_return(FAST_RAW_RESPONSE)
 
-      result = thesaurus.synonym('fast')
+      result = thesaurus.synonyms('fast')
       expect(result).to match_array fast_synonyms
     end
 
     it 'returns an empty array if no word is specified' do
-      result = thesaurus.synonym('')
+      result = thesaurus.synonyms('')
       expect(result).to eq [] 
     end
   end

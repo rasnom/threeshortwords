@@ -11,17 +11,17 @@ RSpec.describe 'BigHugeThesaurus' do
     expect(thesaurus.api_key).to be_a(String)
   end
 
-  describe 'synonym' do
+  describe 'synonyms' do
     it 'returns a list of synonyms' do
       allow(HTTParty).to receive(:get).and_return('{"noun":{"syn":["this","and","that"]}}')
 
-      result = thesaurus.synonym('anything')
+      result = thesaurus.synonyms('anything')
       expect(result).to be_a(Array)
       expect(result.first).to be_a(String)
     end
 
     it 'returns an empty array if no word is specified' do
-      result = thesaurus.synonym('')
+      result = thesaurus.synonyms('')
       expect(result).to eq [] 
     end
   end

@@ -8,7 +8,7 @@ class ThesaurusService
     @api_key = 'A_PLACEHOLDER_API_KEY'
   end
 
-  def synonym(word)
+  def synonyms(word)
     return [] if word == '' 
 
     [word]    
