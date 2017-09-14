@@ -2,6 +2,17 @@ require 'rails_helper'
 
 RSpec.describe 'WordsAPI' do
   let(:thesaurus) { WordsAPI.new }
+  let(:fast_synonyms) {[
+    'firm','loyal','truehearted','faithful','tight','immobile','fixed','flying','quick',
+    'hurried','fasting','abstinence','diet','hunger strike','ramadan','dieting','debauched',
+    'degenerate','degraded','dissipated','dissolute','libertine','profligate','riotous',
+    'immoral','desist','refrain','abstain','winged','accelerated','instantaneous','meteoric',
+    'prompt','rapid','red-hot','scurrying','smart','speedy','straightaway','swift',
+    'windy','blistering','double-quick','express','fast-breaking','fast-paced','fleet',
+    'high-speed','high-velocity','hot','hurrying','immediate','instant','presto','vivace',
+    'andantino','allegretto','prestissimo','allegro','causative','smooth','imperviable',
+    'impervious','alacritous'
+  ]}
 
   it 'can create a thesaurus service with a name' do
     expect(thesaurus.name).to eq 'Words API'
@@ -18,18 +29,6 @@ RSpec.describe 'WordsAPI' do
   end
 
   describe 'extract_relevant_words' do
-    let(:fast_synonyms) {[
-      'firm','loyal','truehearted','faithful','tight','immobile','fixed','flying','quick',
-      'hurried','fasting','abstinence','diet','hunger strike','ramadan','dieting','debauched',
-      'degenerate','degraded','dissipated','dissolute','libertine','profligate','riotous',
-      'immoral','desist','refrain','abstain','winged','accelerated','instantaneous','meteoric',
-      'prompt','rapid','red-hot','scurrying','smart','speedy','straightaway','swift',
-      'windy','blistering','double-quick','express','fast-breaking','fast-paced','fleet',
-      'high-speed','high-velocity','hot','hurrying','immediate','instant','presto','vivace',
-      'andantino','allegretto','prestissimo','allegro','causative','smooth','imperviable',
-      'impervious','alacritous'
-    ]}
-
     it 'has a list of the categories to take words from' do
       categories = ['synonyms','typeOf','hasTypes','similarTo']
       expect(thesaurus.relevant_api_categories).to match_array categories
@@ -42,11 +41,10 @@ RSpec.describe 'WordsAPI' do
 
   describe 'synonym' do
     it 'returns a list of synonyms' do
-      allow(HTTParty).to receive(:get).and_return('{"noun":{"syn":["this","and","that"]}}')
+      allow(HTTParty).to receive(:get).and_return(FAST_RAW_RESPONSE)
 
-      result = thesaurus.synonym('anything')
-      expect(result).to be_a(Array)
-      expect(result.first).to be_a(String)
+      result = thesaurus.synonym('fast')
+      expect(result).to match_array fast_synonyms
     end
 
     it 'returns an empty array if no word is specified' do

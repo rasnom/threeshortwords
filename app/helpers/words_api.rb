@@ -34,7 +34,6 @@ class WordsAPI < ThesaurusService
     
     response = HTTParty.get(url(word))
     extract_relevant_words(response)
-    ['some', 'words']    
   end
 
 end
