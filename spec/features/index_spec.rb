@@ -7,8 +7,12 @@ RSpec.feature "Index", type: :feature do
       visit '/'
     end
 
-    it 'includes the title of the site' do
-      expect(page).to have_content 'Three Short Words'
+    it 'includes the name of the site in the title' do
+      expect(page.title).to have_content 'ThreeShortWords'
+    end
+
+    it 'includes a description of the site' do
+      expect(page).to have_content 'Synonym Filter'
     end
 
     it 'includes a search section' do
@@ -23,7 +27,7 @@ RSpec.feature "Index", type: :feature do
       before(:each) do
         fill_in('first_word', :with => 'azure')
         fill_in('second_word', :with => 'risque')
-        click_button('Submit')
+        click_button('MUNGE')
       end
 
       it 'displays the searched words on the results page' do
