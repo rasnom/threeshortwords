@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe 'ThesaurusService' do
-  let(:thesaurus) { ThesaurusService.new }
+RSpec.describe 'BigHugeThesaurus' do
+  let(:thesaurus) { BigHugeThesaurus.new }
 
   it 'can create a thesaurus service with a name' do
-    expect(thesaurus.name).to be_a(String)
+    expect(thesaurus.name).to eq 'Big Huge Thesaurus'
   end
 
   it 'has an api key' do
