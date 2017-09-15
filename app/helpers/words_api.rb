@@ -32,8 +32,9 @@ class WordsAPI < ThesaurusService
   def synonyms(word)
     return [] if word == '' 
     
-    response = HTTParty.get(url(word))
-    extract_relevant_words(response)
+    headers = {'X-Mashape-Key' => @api_key}
+    response = HTTParty.get(url(word), headers: headers)
+    extract_relevant_words(response.body)
   end
 
 end

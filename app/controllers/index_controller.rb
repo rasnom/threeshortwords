@@ -3,7 +3,7 @@ class IndexController < ApplicationController
   def index
     @first_word = params[:first_word]
     @second_word = params[:second_word]
-    thesaurus = BigHugeThesaurus.new
+    thesaurus = WordsAPI.new
     filter = FilterService.new
 
     if @first_word != nil

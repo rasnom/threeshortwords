@@ -13,7 +13,7 @@ RSpec.describe 'WordsAPI' do
     'andantino','allegretto','prestissimo','allegro','causative','smooth','imperviable',
     'impervious','alacritous'
   ]}
-
+  
   it 'can create a thesaurus service with a name' do
     expect(thesaurus.name).to eq 'Words API'
   end
@@ -35,13 +35,21 @@ RSpec.describe 'WordsAPI' do
     end
 
     it 'returns the words in the relevant categories' do
-      expect(thesaurus.extract_relevant_words(FAST_RAW_RESPONSE)).to match_array fast_synonyms
+      expect(thesaurus.extract_relevant_words(FAST_RAW_BODY)).to match_array fast_synonyms
     end
   end
 
   describe 'synonyms' do
+    class self::FakeResponse 
+      def body
+        FAST_RAW_BODY
+      end
+    end
+
+    let(:httparty_response) { self.class::FakeResponse.new }
+
     it 'returns a list of synonyms' do
-      allow(HTTParty).to receive(:get).and_return(FAST_RAW_RESPONSE)
+      allow(HTTParty).to receive(:get).and_return(httparty_response)
 
       result = thesaurus.synonyms('fast')
       expect(result).to match_array fast_synonyms
@@ -53,7 +61,7 @@ RSpec.describe 'WordsAPI' do
     end
   end
 
-  FAST_RAW_RESPONSE = '{
+  FAST_RAW_BODY = '{
     "word": "fast",
     "results": [
       {
