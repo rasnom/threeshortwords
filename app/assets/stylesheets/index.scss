@@ -20,6 +20,16 @@ $large: 27px;
 $xl: 54px;
 $block: 108px;
 
+$background-color: #FFFFFF;
+$left-color: #6D7993;
+$right-color: #96858F;
+$results-color: #DDDDDD;
+$collide-color: #9099A2;
+
+body {
+  background-color: $background-color;
+}
+
 div.page {
   max-width: 4 * $block;
   min-width: 2 * $block;
@@ -46,11 +56,14 @@ h1 {
   bottom: 0;
   padding: $small;
   padding-top: $medium;
+  input {
+    background-color: $background-color;
+  }
 }
 
 .negative-space {
   position: absolute;
-  background-color: white;
+  background-color: $background-color;
   top: $xl;
   bottom: 0; 
   width: calc(25% - #{$small});
@@ -61,7 +74,7 @@ h1 {
   z-index: 1;
   left: $small;
   right: 20%;
-  background-color: blue;
+  background-color: $left-color;
   border-radius: 0 $xl 0 0;
   input {
     float: left;
@@ -79,7 +92,7 @@ h1 {
   right: $small;
   left: 20%;
   top: $xl;
-  background-color: green;
+  background-color: $right-color;
   border-radius: $xl 0 0 0;
   input {
     float: right;
@@ -94,7 +107,7 @@ h1 {
 .filter-input {
   height: $xl + $medium;
   z-index: 3;
-  background-color: gray;
+  background-color: $collide-color;
   position: absolute;
   top: -$small;
   left: calc(20% - #{$small});
@@ -103,6 +116,7 @@ h1 {
   input {
     margin-top: $medium;
     width: $block;
+    background-color: $background-color;
   }
   border-radius: $small;
 }
@@ -120,7 +134,7 @@ h1 {
   margin-top: $xl;
   margin-right: 20%;
   margin-left: 20%;
-  background-color: orange;
+  background-color: $results-color;
   ul {
     padding-top: $large;
     margin-left: 20%;
