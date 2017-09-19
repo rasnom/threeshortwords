@@ -14,11 +14,11 @@ div {
 
 
 // actual styles
-$small: 10px;
-$medium: 20px;
-$large: 40px;
-$xl: 80px;
-$block: 160px;
+$small: 12px;
+$medium: 18px;
+$large: 27px;
+$xl: 54px;
+$block: 108px;
 
 div.page {
   max-width: 4 * $block;
