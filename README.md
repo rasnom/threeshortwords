@@ -41,8 +41,8 @@ rails server
 
 ## Next Steps
 
-* Remove database for now
-* Contextual Routing
+* Account unknown and misspelled words
+* Contextual routing
 * API
 * Refactor for cleanliness
 * Second draft layout and styling
