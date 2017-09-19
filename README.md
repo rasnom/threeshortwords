@@ -1,8 +1,10 @@
-# Three Short Words: Fuzzy Thesaurus
+# Three Short Words
 
-
+![screenshot](fuzzy_thesaurus_screenshot.png)
 
 ## Premise
+
+I often find online thesauri to be frustrating because every word generates a huge number of synonym results, with the same words each occuring several times in different tenses and contexts. Usually when I use a thesaurus I have some addition information about the meaning or context that I am going for, but no way to include it in the search. This is an early prototype of a more flexible thesaurus that looks for the intersection of two words.
 
 ## Live
 
@@ -18,6 +20,12 @@ http://www.threeshortwords.com
 * Start rails
 * **To Do: Flesh out instructions**
 * **To Do: Verify process on new image**
+
+## Tech Stack
+
+* Ruby (2.3.1)
+* Rails (5.1.3)
+* [WordsAPI](www.wordsapi.com)
 
 ## Next Steps
 
