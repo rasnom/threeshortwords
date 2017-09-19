@@ -12,6 +12,17 @@ http://www.threeshortwords.com
 
 ## Deployment Instructions
 
+### Get a WordsAPI key
+
+Currenntly this app is set kup to use the WordsAPI(www.wordsapi.com) as its reference, which requires the server to submit an API key. [API keys are available through the Mashape Marketplace.](https://market.mashape.com/wordsapi/wordsapi/pricing) They are free for up to 2500 API calls per day but do require a credit card to set up.
+
+Add the API key to an environment variable
+
+```
+echo 'export MyVar="abc"' >> ~/.bashrc
+source ~/.bashrc
+```
+
 * Clone this repo `git clone https://github.com/rasnom/threeshortwords.git`
 * Bundle 
 * Create Database
