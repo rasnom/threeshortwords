@@ -19,18 +19,19 @@ Currenntly this app is set kup to use the WordsAPI(www.wordsapi.com) as its refe
 Add the API key to an environment variable
 
 ```
-echo 'export MyVar="abc"' >> ~/.bashrc
+echo 'export WORDS_API_KEY="your individual api key"' >> ~/.bashrc
 source ~/.bashrc
 ```
+### Setup Server
 
-* Clone this repo `git clone https://github.com/rasnom/threeshortwords.git`
-* Bundle 
-* Create Database
-* Get Words API Key
-* Set environment variables
-* Start rails
-* **To Do: Flesh out instructions**
-* **To Do: Verify process on new image**
+```
+git clone https://github.com/rasnom/threeshortwords.git
+cd threeshortwords
+bundle install 
+rails db:create
+rails db:migrate
+rails server
+```
 
 ## Tech Stack
 
