@@ -1,5 +1,5 @@
 
-  
+
 <div class='page'>
   <h1> Fuzzy Thesaurus </h1>
   <div class='search-container'>
@@ -9,21 +9,21 @@
           <input type='text' name='first_word' class='synonym'  value='<%= @first_word %>'><br>
           <div class='negative-space'> </div>
         </div>
-	<div class='word-input right-word'>
+      	<div class='word-input right-word'>
           <input type='text' name='second_word' class='synonym' value='<%= @second_word %>'><br>
           <div class='negative-space'> </div>
         </div>
       </div>
       <div class='lower-form'>
         <div class='filter-input'>
-	  <div class='submit-wrapper'>
-	    <input type='submit' value='Collide'>
+          <div class='submit-wrapper'>
+            <input type='submit' value='Munge'>
           </div>
         </div>
       </div>
     </form>
   </div>
-    
+
   <div class='results-container'>
     <ul>
       <% @results.each do |result| %>

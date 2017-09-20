@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// debugging styles 
+// debugging styles
 div {
 }
 
@@ -65,7 +65,7 @@ h1 {
   position: absolute;
   background-color: $background-color;
   top: $xl;
-  bottom: 0; 
+  bottom: 0;
   width: calc(25% - #{$small});
 }
 
@@ -126,7 +126,21 @@ h1 {
   z-index: 4;
   left: 0;
   right: 0;
-  text-align: center;  
+  text-align: center;
+}
+
+input[type=submit] {
+  margin-top: $medium;
+  padding: $small $large;
+  background-color: $results-color;
+  color: black;
+  border: 2px solid $left-color;
+  border-radius: 4px;
+}
+
+input[type=submit]:hover {
+  background-color: black;
+  color: $results-color;
 }
 
 .results-container {
