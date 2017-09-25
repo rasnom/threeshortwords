@@ -41,7 +41,7 @@ rails server
 
 ## Next Steps
 
-* Account unknown and misspelled words
+* Account for unknown and misspelled words
 * Contextual routing
 * API
 * Refactor for cleanliness
