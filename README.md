@@ -4,7 +4,7 @@
 
 ## Premise
 
-I often find online thesauri to be frustrating because every word generates a huge number of synonym results, with the same words each occuring several times in different tenses and contexts. Usually when I use a thesaurus I have some addition information about the meaning or context that I am going for, but no way to include it in the search. This is an early prototype of a more flexible thesaurus that looks for the intersection of two words.
+I often find online thesauri to be frustrating because every word generates a huge number of synonym results, with the same words each occuring several times in different tenses and contexts. Usually when I use a thesaurus I have some additional information about the meaning or context that I am going for, but no way to include it in the search. This is an early prototype of a more flexible thesaurus that looks for the intersection of two words.
 
 ## Live
 
