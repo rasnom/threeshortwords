@@ -1,5 +1,9 @@
+require 'rails_helper'
+
 describe "Thesaurus API", type: :request do
-	describe 'single word requets' do
+	include Rack::Test::Methods
+
+	describe 'single word request' do
 		it 'returns a list of synonyms' do
 			get '/api/v1', { words: ['flat'] }
 
