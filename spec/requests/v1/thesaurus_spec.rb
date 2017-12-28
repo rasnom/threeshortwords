@@ -32,6 +32,18 @@ describe "Thesaurus API", type: :request, api: true do
 	end
 
 	describe 'multiple word request' do
+		it 'returns a list of common synonyms' do
+			get '/api/v1', params: { words: ['risque', 'azure'] }
 
+			synonyms = JSON.parse(response.body)
+			expect(synonyms).to include 'blue'
+		end
+
+		it 'returns an empty list if there are no common synonyms' do
+			get '/api/v1', params: { words: ['tree', 'mutton', 'sophisticated'] }
+
+			synonyms = JSON.parse(response.body)
+			expect(synonyms).to eq []
+		end
 	end
 end

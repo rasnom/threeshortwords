@@ -10,7 +10,11 @@ class ApiV1Controller < ApplicationController
 		if words == nil || words.empty?
 			response = []
 		else
-			response = thesaurus.synonyms(words.first)
+			individual_synonyms = []
+			words.each do |query_word|
+				individual_synonyms.push(thesaurus.synonyms(query_word))
+			end
+			response = individual_synonyms.reduce(individual_synonyms[0], :&)
 		end	
 
 		render json: response
@@ -18,7 +22,11 @@ class ApiV1Controller < ApplicationController
 
 
 
-	# private
+	private
+
+	def intersection(synonyms_lists)
+
+	end
 
 	# 	def user_params
 	# 		params.permit(:words)
