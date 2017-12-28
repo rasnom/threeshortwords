@@ -1,9 +1,7 @@
 class ApiV1Controller < ApplicationController
 
 	def index
-		p params
-		response = {content: "anything"}
-		p response
+		response = []
 		render json: response
 	end
 
