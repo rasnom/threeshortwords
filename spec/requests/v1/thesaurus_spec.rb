@@ -12,13 +12,13 @@ describe "Thesaurus API", type: :request, api: true do
 	end
 
 	describe 'single word request' do
-		xit 'returns a list of synonyms' do
+		it 'returns a list of synonyms' do
 			get '/api/v1', params: { words: ['flat'] }
 
 			expect(response).to be_success
 			expect(response.header['Content-Type']).to include 'application/json'
 			synonyms = JSON.parse(response.body)
-			expect(synonyms).to include("flush", "horizontal", "apartment")
+			expect(synonyms).to include("horizontal", "apartment")
 		end
 	end
 

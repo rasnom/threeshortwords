@@ -15,6 +15,14 @@ RSpec.describe ApiV1Controller, type: :controller, api: true do
 
 			expect(JSON.parse(response.body)).to eq []
 		end
+
+		describe 'with one word specified' do
+			it 'returns a list of synonyms' do
+				get :index, params: { words: ['fly'] }
+
+				expect(JSON.parse(response.body)).to include('soar', 'flee')
+			end
+		end
 	end
 
 end
