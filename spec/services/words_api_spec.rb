@@ -59,6 +59,11 @@ RSpec.describe 'WordsAPI' do
       result = thesaurus.synonyms('')
       expect(result).to eq [] 
     end
+
+    it 'returns an empty array if the word has no synonyms' do
+      result = thesaurus.synonyms('awordsthatdoesnotexist')
+      expect(result).to eq []
+    end
   end
 
   FAST_RAW_BODY = '{

@@ -20,7 +20,18 @@ describe "Thesaurus API", type: :request, api: true do
 			synonyms = JSON.parse(response.body)
 			expect(synonyms).to include("horizontal", "apartment")
 		end
+
+		it 'returns an empty list if there are no synonyms' do
+			get '/api/v1', params: { words: ['imaginaryword'] }
+
+			expect(response).to be_success
+			expect(response.header['Content-Type']).to include 'application/json'
+			synonyms = JSON.parse(response.body)
+			expect(synonyms).to eq []
+		end
 	end
 
+	describe 'multiple word request' do
 
+	end
 end

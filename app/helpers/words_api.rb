@@ -18,11 +18,15 @@ class WordsAPI < ThesaurusService
   def extract_relevant_words(response)
     word_list = []
     results = JSON.parse(response)['results']
-   
-    results.each do |meaning|
-      relevant_api_categories.each do |category|
-        unless meaning[category] == nil
-          word_list += meaning[category]
+    
+    if results == nil
+      return []
+    else
+      results.each do |meaning|
+        relevant_api_categories.each do |category|
+          unless meaning[category] == nil
+            word_list += meaning[category]
+          end
         end
       end
     end
