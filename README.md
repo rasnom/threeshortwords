@@ -14,7 +14,7 @@ http://www.threeshortwords.com
 
 ### Get a WordsAPI key
 
-Currenntly this app is set kup to use the WordsAPI(www.wordsapi.com) as its reference, which requires the server to submit an API key. [API keys are available through the Mashape Marketplace.](https://market.mashape.com/wordsapi/wordsapi/pricing) They are free for up to 2500 API calls per day but do require a credit card to set up.
+Currenntly this app is set up to use the WordsAPI(www.wordsapi.com) as its reference, which requires the server to submit an API key. [API keys are available through the Mashape Marketplace.](https://market.mashape.com/wordsapi/wordsapi/pricing) They are free for up to 2500 API calls per day but do require a credit card to set up.
 
 Add the API key to an environment variable
 
@@ -41,11 +41,12 @@ rails server
 
 ## Next Steps
 
-* Account for unknown and misspelled words
-* Contextual routing
-* API
-* Refactor for cleanliness
+* ~~Account for unknown and misspelled words~~
+* ~~Basic API~~
 * Second draft layout and styling
+ * Create stand alone client side app that uses the API
+* Contextual routing
+* Refactor for cleanliness
 * Broaden scope of API calls if necessary (add more fuzzyness until you get a reasonable set of results)
 * Cache API call results
 
