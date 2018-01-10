@@ -25,5 +25,4 @@ RSpec.describe 'ThesaurusService' do
       expect(result).to eq [] 
     end
   end
-
 end

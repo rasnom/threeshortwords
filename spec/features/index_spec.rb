@@ -1,4 +1,4 @@
-require 'rails_helper'
+  require 'rails_helper'
 
 RSpec.feature "Index", type: :feature do
   
@@ -12,7 +12,7 @@ RSpec.feature "Index", type: :feature do
     end
 
     it 'includes a description of the site' do
-      expect(page).to have_content 'Synonym Filter'
+      expect(page).to have_content 'Fuzzy Thesaurus'
     end
 
     it 'includes a search section' do
@@ -27,12 +27,12 @@ RSpec.feature "Index", type: :feature do
       before(:each) do
         fill_in('first_word', :with => 'azure')
         fill_in('second_word', :with => 'risque')
-        click_button('MUNGE')
+        click_button('Munge')
       end
 
       it 'displays the searched words on the results page' do
         expect(find_field('first_word').value).to eq 'azure'
-	expect(find_field('second_word').value).to eq 'risque'
+        expect(find_field('second_word').value).to eq 'risque'
       end
 
       it 'displays words that match both criteria in the results' do
