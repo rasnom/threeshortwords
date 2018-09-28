@@ -35,7 +35,7 @@ rails server
 
 ## API
 
-This is not a CRUD app so a REST API is not necessarily appropriate. 
+This is not a CRUD app so a REST API is not necessarily appropriate. Instead the API focuses on simple usability for the few specific use cases. Calls to /thesaurus accept a list of words as a parameter and return a list of shared synonyms. The full documentaion is available in OpenAPI format in [openapi.yaml](openapi.yaml).
 
 ## Tech Stack
 
