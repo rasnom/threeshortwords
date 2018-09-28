@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   version: 1.0.0
   title: Fuzzy Thesaurus API
-  description: This API takes words and returns word synonyms, near synonyms, and insectional synonyms. It is intended to be the back end for threeshortwords.com.
+  description: This API takes words and returns word synonyms, near synonyms, and intersectional synonyms. It is intended to be the back end for threeshortwords.com.
 
 servers:
   - url: http://www.threeshortwords.com
