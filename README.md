@@ -33,6 +33,10 @@ rails db:migrate
 rails server
 ```
 
+## API
+
+This is not a CRUD app so a REST API is not necessarily appropriate. 
+
 ## Tech Stack
 
 * Ruby (2.3.1)
